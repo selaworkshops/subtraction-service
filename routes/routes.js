@@ -1,5 +1,11 @@
 var appRouter = function (app) {
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get("/", function(req, res) {
 	res.status(404).send("Error 404, To use the substraction service browse to: {server}:{port}/substraction/{number1}/{number2}");
 })
@@ -16,7 +22,6 @@ app.get("/substraction/:number1/:number2", function(req,res) {
 		"total": total
 	}
 	
-	res.setHeader('Access-Control-Allow-Origin', 'null');
 	return res.status(200).end(JSON.stringify(body));
 	
   });
