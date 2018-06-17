@@ -1,7 +1,7 @@
 {
-  "name": "sum-service",
+  "name": "subtraction-service",
   "version": "1.0.0",
-  "description": "sum service",
+  "description": "subtraction service",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.3",
